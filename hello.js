@@ -49,10 +49,19 @@
 // let playagain = true;
 // while(playagain){
 //     let age = prompt("Please enter your age ");
-//     if (age<=18){
+//     if (age<=18 && age>0){
 //         alert("you can not drive");
 //     }else if (age>18) {
 //         alert("you can drive");
+//     }else if (age<=0){
+//         console.error("enter a valid age");
+//         break;
 //     }
 //     playagain = confirm("do you want to play again")
+// }
+
+//Practise problem 
+// alert("do you want to redirected to google");
+// if(confirm("do you want to redirect to google")){
+//     location.href=("https://www.google.com/");
 // }
