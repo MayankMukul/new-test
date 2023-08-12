@@ -44,3 +44,15 @@
 //     return a*b ;
 // })
 // console.log(n);
+
+//Practise Problem 
+// let playagain = true;
+// while(playagain){
+//     let age = prompt("Please enter your age ");
+//     if (age<=18){
+//         alert("you can not drive");
+//     }else if (age>18) {
+//         alert("you can drive");
+//     }
+//     playagain = confirm("do you want to play again")
+// }
