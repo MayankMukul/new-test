@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+  
+}
+ul {
+    /* display: flex; */
+}
+li {
+    list-style: none ;
+    display: inline;
+    padding: 1rem;
+}

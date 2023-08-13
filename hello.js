@@ -65,3 +65,8 @@
 // if(confirm("do you want to redirect to google")){
 //     location.href=("https://www.google.com/");
 // }
+
+
+//Practise navbar
+// document.querySelector("ul").firstElementChild.style.color="red"; 
+// document.querySelectorAll("li")[2].style.backgroundColor="blue";
