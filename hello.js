@@ -88,3 +88,28 @@
 // setInterval(bulb1,500);
 // setInterval(bulb2,500);
 // setInterval(bulb3,500);
+
+//Promises 
+
+let p1 = new Promise((resolve,reject)=>{
+
+    console.log("promise pending...");
+     resolve(true); 
+    //reject(true);
+});
+
+let p2 = new Promise((resolve,reject)=>{
+
+    console.log("promise pending...");
+    // resolve(true); 
+    reject(true);
+
+});
+
+p1.then(()=>{
+    console.log("promise fulfilled");
+})
+
+p2.catch(()=>{
+    console.log('Promise rejected');
+})
