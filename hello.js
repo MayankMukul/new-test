@@ -110,6 +110,13 @@ p1.then(()=>{
     console.log("promise fulfilled");
 })
 
-p2.catch(()=>{
+// p2.catch(()=>{
+//     console.log('Promise rejected');
+// })
+
+
+p2.then(()=>{
+    console.log("promise fulfilled");
+},()=>{
     console.log('Promise rejected');
 })
