@@ -70,3 +70,21 @@
 //Practise navbar
 // document.querySelector("ul").firstElementChild.style.color="red"; 
 // document.querySelectorAll("li")[2].style.backgroundColor="blue";
+
+//Practise Toggle
+// function bulb1(){
+//     let toggle = document.querySelector("#bulb1");
+//     toggle.classList.toggle("toggle1");
+// }
+// function bulb2(){
+//     let toggle = document.querySelector("#bulb2");
+//     toggle.classList.toggle("toggle2");
+// }
+// function bulb3(){
+//     let toggle = document.querySelector("#bulb3");
+//     toggle.classList.toggle("toggle3");
+// }
+
+// setInterval(bulb1,500);
+// setInterval(bulb2,500);
+// setInterval(bulb3,500);

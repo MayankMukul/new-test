@@ -27,3 +27,21 @@ button {
     margin: 1rem;
     padding: 5px;
 }
+
+.bulb {
+    margin: 1rem;
+    height: 100px;
+    width: 100px;
+}
+
+.toggle1 {
+    background-color: red;
+}
+
+.toggle2 {
+    background-color: blue;
+}
+
+.toggle3 {
+    background-color: green;
+}
