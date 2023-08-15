@@ -182,34 +182,64 @@
 
 //async and await
 
-async function waiting () {
+// async function waiting () {
 
-    let p1 = new Promise((resolve,reject)=>{
-        setTimeout (()=> {
-            console.log('promise 1 pending');
-            resolve("over 1");
+//     let p1 = new Promise((resolve,reject)=>{
+//         setTimeout (()=> {
+//             console.log('promise 1 pending');
+//             resolve("over 1");
         
-        },1000);
-    })
-    let p2 = new Promise((resolve,reject)=>{
-        setTimeout (()=> {
-            console.log('promise 2 pending');
-            resolve("over 2");
+//         },1000);
+//     })
+
+//     let p2 = new Promise((resolve,reject)=>{
+//         setTimeout (()=> {
+//             console.log('promise 2 pending');
+//             resolve("over 2");
         
-        },3000);
-    })
+//         },3000);
+//     })
     
-    console.log("p1 start");
-    let promise1 = await p1;
-    console.log("P1 over");
-    console.log("P2 start");
-    let promise2 =await p2;
-    console.log("P2 over");
+//     console.log("p1 start");
+//     let promise1 = await p1; //promise1 waits for the p1 value
+//     console.log(promise1+" P1 over");
+//     console.log(" P2 start");
+//     let promise2 =await p2;
+//     console.log(promise2+" P2 over");
 
 
-    return [promise1,promise2];
-}
+//     return [promise1,promise2];
+// }
 
-let result = waiting();
+// let result = waiting();
 
-console.log(result);
+// result.then((value)=>{
+//     console.log(value);
+// })
+// let another = ()=>{
+//     console.log("this function does not wait");      //this function does not wait 
+// }
+// console.log(another());
+// console.log("end");
+
+
+//try catch
+
+// console.log("one");
+// console.log("two");
+// console.log("three");
+// console.log("four");
+// console.log("five");
+
+// try {                       //try catch does not work with async code eg - setinterval . It does not work with it.
+//     console.log(abc)        //as abc is not defined it produces error but since it is written in try block the code does not get stop or hault and continues to the catch part
+// } catch {
+//     console.log("error occurred"); //the catch part is only executed when thier is error present in the try section
+// }
+
+// console.log("six");
+// console.log("seven");
+// console.log("eight");
+// console.log("nine");
+// console.log("ten");
+
