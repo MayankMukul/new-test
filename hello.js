@@ -147,34 +147,69 @@
 
     //promise api
 
-    let p1 = new Promise( (resolve,reject)=>{
-        //resolve(console.log("resolved  1"+"value1"));
-        reject(console.log("reject  1"+"value1"));
-    })
-    let p2 = new Promise( (resolve,reject)=>{
-        //resolve(console.log("resolved  2"+"value1"));
-        reject(console.log("rejected  2"+"value2"));
-    })
-    let p3 = new Promise( (resolve,reject)=>{
-        resolve(console.log("resolved  3"+"value3"));
-    })
+    // let p1 = new Promise( (resolve,reject)=>{
+    //     //resolve(console.log("resolved  1"+"value1"));
+    //     reject(console.log("reject  1"+"value1"));
+    // })
+    // let p2 = new Promise( (resolve,reject)=>{
+    //     //resolve(console.log("resolved  2"+"value1"));
+    //     reject(console.log("rejected  2"+"value2"));
+    // })
+    // let p3 = new Promise( (resolve,reject)=>{
+    //     resolve(console.log("resolved  3"+"value3"));
+    // })
     
-    p1.then((value)=>{
-        console.log("done 1 "+value);
-    });
-    p2.then((value)=>{
-        console.log("done 2 "+value);
-    });
-    p3.then((value)=>{
-        console.log("done 3 "+value);
-    });
+    // p1.then((value)=>{
+    //     console.log("done 1 "+value);
+    // });
+    // p2.then((value)=>{
+    //     console.log("done 2 "+value);
+    // });
+    // p3.then((value)=>{
+    //     console.log("done 3 "+value);
+    // });
 
     // let promiseall= Promise.all([p1,p2,p3]);  //return array of all the promises
     // let promiseall= Promise.allSettled([p1,p2,p3]); //return all resolved array
     // let promiseall= Promise.race([p1,p2,p3]); //return the promise which gets executed fastest
     // let promiseall= Promise.any([p1,p2,p3]); //return the promise which gets executed fastest and is resolved
     // let promiseall= Promise.resolve("4"); //return the promise which is resolved
-    let promiseall= Promise.reject(new Error ("error occurred")); //return the promise is rejected
-    promiseall.then((value)=>{
-        console.log(value);
-})
+//     let promiseall= Promise.reject(new Error ("error occurred")); //return the promise is rejected
+//     promiseall.then((value)=>{
+//         console.log(value);
+// })
+
+
+//async and await
+
+async function waiting () {
+
+    let p1 = new Promise((resolve,reject)=>{
+        setTimeout (()=> {
+            console.log('promise 1 pending');
+            resolve("over 1");
+        
+        },1000);
+    })
+    let p2 = new Promise((resolve,reject)=>{
+        setTimeout (()=> {
+            console.log('promise 2 pending');
+            resolve("over 2");
+        
+        },3000);
+    })
+    
+    console.log("p1 start");
+    let promise1 = await p1;
+    console.log("P1 over");
+    console.log("P2 start");
+    let promise2 =await p2;
+    console.log("P2 over");
+
+
+    return [promise1,promise2];
+}
+
+let result = waiting();
+
+console.log(result);
