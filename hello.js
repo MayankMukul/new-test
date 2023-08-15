@@ -125,19 +125,22 @@
 let p1 = new Promise((resolve,reject)=>{
 
         console.log("promise pending...");
-         resolve(console.log("p1 promise resolved")); 
-        //reject(true);
-
-        
+        resolve(console.log("p1 promise resolved")); 
+        //reject(true);   
+    
     });
 
-    p1.then(()=>{
+
+p1.then(()=>{
         console.log("this is then p1");
-        let p2 = new Promise((resolve,reject)=>{
+    let p2 = new Promise((resolve,reject)=>{
             reject(console.log("p2 not fulfilled"));
         }); 
+        
+        return p2;
+
     }).then(()=>{
         console.log("this is p2 then");
-    }).catch(()=>{
+    }) .catch(()=>{
         console.log("error");
-    })
+    });
