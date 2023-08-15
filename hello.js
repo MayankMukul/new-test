@@ -243,3 +243,13 @@
 // console.log("nine");
 // console.log("ten");
 
+//error meassage
+
+try {
+ //console.log(abc);
+ throw new ReferenceError("can be used to throw error"); //used to throw new error
+} catch (error){
+    console.log(error.name);
+    console.log(error.message);
+    console.log(error.stack)
+}
