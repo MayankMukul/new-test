@@ -122,25 +122,59 @@
 // })
 
 //practise promise chaining
-let p1 = new Promise((resolve,reject)=>{
+// let p1 = new Promise((resolve,reject)=>{
 
-        console.log("promise pending...");
-        resolve(console.log("p1 promise resolved")); 
-        //reject(true);   
+//         console.log("promise pending...");
+//         resolve(console.log("p1 promise resolved")); 
+//         //reject(true);   
     
+//     });
+
+
+// p1.then(()=>{
+//         console.log("this is then p1");
+//     let p2 = new Promise((resolve,reject)=>{
+//             reject(console.log("p2 not fulfilled"));
+//         }); 
+
+//         return p2;
+
+//     }).then(()=>{
+//         console.log("this is p2 then");
+//     }) .catch(()=>{
+//         console.log("error");
+//     });
+
+    //promise api
+
+    let p1 = new Promise( (resolve,reject)=>{
+        //resolve(console.log("resolved  1"+"value1"));
+        reject(console.log("reject  1"+"value1"));
+    })
+    let p2 = new Promise( (resolve,reject)=>{
+        //resolve(console.log("resolved  2"+"value1"));
+        reject(console.log("rejected  2"+"value2"));
+    })
+    let p3 = new Promise( (resolve,reject)=>{
+        resolve(console.log("resolved  3"+"value3"));
+    })
+    
+    p1.then((value)=>{
+        console.log("done 1 "+value);
+    });
+    p2.then((value)=>{
+        console.log("done 2 "+value);
+    });
+    p3.then((value)=>{
+        console.log("done 3 "+value);
     });
 
-
-p1.then(()=>{
-        console.log("this is then p1");
-    let p2 = new Promise((resolve,reject)=>{
-            reject(console.log("p2 not fulfilled"));
-        }); 
-        
-        return p2;
-
-    }).then(()=>{
-        console.log("this is p2 then");
-    }) .catch(()=>{
-        console.log("error");
-    });
+    // let promiseall= Promise.all([p1,p2,p3]);  //return array of all the promises
+    // let promiseall= Promise.allSettled([p1,p2,p3]); //return all resolved array
+    // let promiseall= Promise.race([p1,p2,p3]); //return the promise which gets executed fastest
+    // let promiseall= Promise.any([p1,p2,p3]); //return the promise which gets executed fastest and is resolved
+    // let promiseall= Promise.resolve("4"); //return the promise which is resolved
+    let promiseall= Promise.reject(new Error ("error occurred")); //return the promise is rejected
+    promiseall.then((value)=>{
+        console.log(value);
+})
