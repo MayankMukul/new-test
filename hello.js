@@ -253,3 +253,6 @@ try {
     console.log(error.message);
     console.log(error.stack)
 }
+finally{
+    console.log("over");    //this code runs after try and catch and gets executed even if catch is having any error 
+}
