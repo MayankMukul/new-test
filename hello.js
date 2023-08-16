@@ -273,48 +273,52 @@
 // });
 
 //practise Problem
-async function p1(){
-        return new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                resolve('p1')
-            },1000);
-        })
-    };
-async function p2(){
-        return new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                resolve('p2')
-            },2000);
-        })
-    };
-async function p3(){
-        return new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                resolve('p3')
-            },3000);
-        })
-    };
+// async function p1(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(() => {
+//                 resolve('p1')
+//             },1000);
+//         })
+//     };
+// async function p2(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(() => {
+//                 resolve('p2')
+//             },2000);
+//         })
+//     };
+// async function p3(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(() => {
+//                 resolve('p3')
+//             },3000);
+//         })
+//     };
 
+//take more time as it wait for particularly every promise to finish and then moves to next step
 // async function load (){
 //     console.time("run");
 //     console.log("starting...")
-//     let n1 = await p1();   //waits for Promise p1
-//     let n2 = await p2();     //waits for Promise p2
-//     let n3 = await p3();     //waits for Promise p3
+//     let n1 = await p1();   //waits for Promise p1 ie for 1 sec
+//     let n2 = await p2();     //waits for Promise p2 ie for  2 sec
+//     let n3 = await p3();     //waits for Promise p3 ie for 3 sec   and the total program has to wait for 6sec
 //     console.log(n1,n2,n3);
 //     console.timeEnd("run");
 // }
 
-async function load (){
-    console.time("run");
-    console.log("starting...")
-    let n1 =  p1();             //starts all the promises
-    let n2 =  p2();
-    let n3 =  p3();
+//in this function the promises get get trigred or are started all at one go function waits to store all the promises result
+// async function load (){
+//     console.time("run");
+//     console.log("starting...")
+//     let n1 =  p1();             //starts all the promises
+//     let n2 =  p2();
+//     let n3 =  p3();
 
-    let n1n2n3 = await Promise.all([n1,n2,n3]); //waits for all the problem to end
-    console.log(n1n2n3);
-    console.timeEnd("run");
-}
+//     let n1n2n3 = await Promise.all([n1,n2,n3]); //waits for all the problem to end
+//     console.log(n1n2n3);
+//     console.timeEnd("run");
+// }
 
-load();
+// load();
+
+//
