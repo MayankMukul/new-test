@@ -245,14 +245,76 @@
 
 //error meassage
 
-try {
- //console.log(abc);
- throw new ReferenceError("can be used to throw error"); //used to throw new error
-} catch (error){
-    console.log(error.name);
-    console.log(error.message);
-    console.log(error.stack)
+// try {
+//  //console.log(abc);
+//  throw new ReferenceError("can be used to throw error"); //used to throw new error
+// } catch (error){
+//     console.log(error.name);
+//     console.log(error.message);
+//     console.log(error.stack)
+// }
+// finally{
+//     console.log("over");    //this code runs after try and catch and gets executed even if catch is having any error 
+// }
+
+//practise problem
+// function load(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+
+//             resolve('data')
+//         },2000);
+//     })
+// }
+
+// let p1=load();
+// p1.then((value)=>{
+//     console.log("done " + value);
+// });
+
+//practise Problem
+async function p1(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('p1')
+            },1000);
+        })
+    };
+async function p2(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('p2')
+            },2000);
+        })
+    };
+async function p3(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('p3')
+            },3000);
+        })
+    };
+
+// async function load (){
+//     console.time("run");
+//     console.log("starting...")
+//     let n1 = await p1();   //waits for Promise p1
+//     let n2 = await p2();     //waits for Promise p2
+//     let n3 = await p3();     //waits for Promise p3
+//     console.log(n1,n2,n3);
+//     console.timeEnd("run");
+// }
+
+async function load (){
+    console.time("run");
+    console.log("starting...")
+    let n1 =  p1();             //starts all the promises
+    let n2 =  p2();
+    let n3 =  p3();
+
+    let n1n2n3 = await Promise.all([n1,n2,n3]); //waits for all the problem to end
+    console.log(n1n2n3);
+    console.timeEnd("run");
 }
-finally{
-    console.log("over");    //this code runs after try and catch and gets executed even if catch is having any error 
-}
+
+load();
