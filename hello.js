@@ -335,3 +335,9 @@
 //     console.log(value);
 //     return value;
 // }))
+
+//get request 
+// a get request has all its information in url and thus have some limit as information can be sent till a certain limit
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json + json))
