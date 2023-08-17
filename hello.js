@@ -345,16 +345,32 @@
 //post request 
 // a post request is used when we have to send the data to the server. Like adding item to cart the detail of items are send to the server to store the information
 //syntax fetch('https request',{options});
-fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: 'POST',
-  body: JSON.stringify({
-    title: 'foo',
-    body: 'bar',
-    userId: 2,
-  }),
-  headers: {
-    'Content-type': 'application/json',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 2,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+// cookies 
+console.log(document.cookie);
+document.cookie = 'key=value';
+console.log(document.cookie);
+document.cookie = 'greet=hello';
+console.log(document.cookie); //it adds new key value pair in cookie
+document.cookie = 'key=newValue';
+console.log(document.cookie);
+let key = "a@d";   //to store this type as input we encrypt the value
+let value = "v@lue";
+document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+console.log(document.cookie);
+// to decode these value we use decodeURIComponent()
+console.log(encodeURIComponent(key));
+console.log(decodeURIComponent(key));
