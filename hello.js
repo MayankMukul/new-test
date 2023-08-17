@@ -376,3 +376,9 @@
 // console.log(decodeURIComponent(key));
 
 //local storage
+let key = "key";
+let value = "value for key";
+
+localStorage.setItem(key,value);
+
+console.log(`the value at ${key } is ${localStorage.getItem(key)}`);
