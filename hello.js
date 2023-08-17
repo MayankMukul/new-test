@@ -360,17 +360,19 @@
 //   .then((json) => console.log(json));
 
 // cookies 
-console.log(document.cookie);
-document.cookie = 'key=value';
-console.log(document.cookie);
-document.cookie = 'greet=hello';
-console.log(document.cookie); //it adds new key value pair in cookie
-document.cookie = 'key=newValue';
-console.log(document.cookie);
-let key = "a@d";   //to store this type as input we encrypt the value
-let value = "v@lue";
-document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-console.log(document.cookie);
-// to decode these value we use decodeURIComponent()
-console.log(encodeURIComponent(key));
-console.log(decodeURIComponent(key));
+// console.log(document.cookie);
+// document.cookie = 'key=value';
+// console.log(document.cookie);
+// document.cookie = 'greet=hello';
+// console.log(document.cookie); //it adds new key value pair in cookie
+// document.cookie = 'key=newValue';
+// console.log(document.cookie);
+// let key = "a@d";   //to store this type as input we encrypt the value
+// let value = "v@lue";
+// document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+// console.log(document.cookie);
+// // to decode these value we use decodeURIComponent()
+// console.log(encodeURIComponent(key));
+// console.log(decodeURIComponent(key));
+
+//local storage
