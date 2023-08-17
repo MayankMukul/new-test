@@ -321,4 +321,17 @@
 
 // load();
 
-//
+//fetch api
+
+// let url = fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m");
+// //getting response of a fetch is a two way process thats why we use two then
+
+// url.then((value)=>{     //it gets the response if it is received or not
+//     console.log(value.status);
+//     console.log(value.ok);
+//     return value.json();
+//     //return value.text();  //after fetch the response  is in two form json and text but only one can be used. Either json or text can be used.
+// }).then((value=>{       //it is another step in which the body of response is accessed
+//     console.log(value);
+//     return value;
+// }))
