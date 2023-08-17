@@ -338,6 +338,23 @@
 
 //get request 
 // a get request has all its information in url and thus have some limit as information can be sent till a certain limit
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log(json + json))
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//       .then(response => response.json())
+//       .then(json => console.log(json))
+
+//post request 
+// a post request is used when we have to send the data to the server. Like adding item to cart the detail of items are send to the server to store the information
+//syntax fetch('https request',{options});
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 2,
+  }),
+  headers: {
+    'Content-type': 'application/json',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
