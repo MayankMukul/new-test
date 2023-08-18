@@ -387,3 +387,11 @@
 // localStorage.clear();
 // localStorage.length;
 // localStorage.index(0..n);
+
+//session storage
+let key1="key_one" ;
+let valu1 ="value one ";
+sessionStorage.setItem(key1,valu1 );
+window.onstorage= ()=>{         //works for localStorage
+    alert("storage updated");
+};
