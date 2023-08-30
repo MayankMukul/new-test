@@ -445,17 +445,59 @@
 
 
 //static Method
-class Car {
-    constructor(name) {
-      this.name = name;
-      console.log(this.name);
-    }
-    static hello(x) {
-      return "Hello " + x.name;
-    }
-  }
-  const myCar = new Car("Ford");
-  console.log(Car.hello(myCar));    //static method is called by class name
+// class Car {
+//     constructor(name) {
+//       this.name = name;
+//       console.log(this.name);
+//     }
+//     static hello(x) {
+//       return "Hello " + x.name;
+//     }
+//   }
+//   const myCar = new Car("Ford");
+//   console.log(Car.hello(myCar));    //static method is called by class name
 //   console.log(Car.hello("car"));
 
 // myCar.hello("ford");  // static method connot be called by this
+
+class Complex {
+    constructor(r,i) {
+        console.log('constructor of complex number');
+        console.log(`real part: ${r} imaginary part :${i}`);
+        console.log(`complex number ${r}+i${i}`);
+        this.real=r;
+        this.imaginary = i;
+    }
+
+    add(num){
+        this.real=this.real+num.real;
+        this.imaginary=this.imaginary+num.imaginary
+    }
+
+    get getrealimaginary(){
+        return {
+            'real' : this.real,
+            'imaginary' : this.imaginary};
+    }
+
+    set setreal(newreal){
+       return this.real=newreal;
+    }
+
+    set setimaginary(newimaginary){
+        return this.imaginary= newimaginary;
+    }
+
+}
+let c=new Complex(1,2);
+let d=new Complex(4,3);
+(c.add (d));//calling instance method on an object
+console.log(`${c.real} +${c.imaginary}i  `);
+
+console.log(d.getrealimaginary);
+
+let e = new Complex(6,6);
+console.log(e);
+e.setreal=(7);
+e.setimaginary=(7);
+console.log(e);
