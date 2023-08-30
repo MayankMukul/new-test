@@ -400,10 +400,11 @@
 
 class Car {
     constructor( name , color) {//this keyword refers to class object
+        console.log(`constructor runs every time class is used`);
         console.log('object created using constructor function ');
         this.name = name;
         this.color = color;
-        console.log(`${name} is of ${color} color`);
+        console.log(`${name} of ${color} color`);
         }
 
     carrunning(){
@@ -418,3 +419,26 @@ class Car {
 const a = new Car("abc","xyz") ;
 a.carrunning();
 a.anotherfunction();
+
+//creating a child class for car
+
+class Nano extends Car {
+    //parent class constructor gets called automatically
+    constructor (name,color,year){
+        //this.year;        //this can not be used before super
+        super (name,color);//calling parent class constructor with arguments passed in
+        //this.year;          //here this can be used
+        console.log (`the year for the car is ${year}`);
+        console.log ('child class constructor');
+    }
+
+    nanoFunction (){
+        console.log ("nano function called ");
+    }
+}
+
+let nanocar = new Nano("TataNano","Red","2010") ;
+nanocar .nanoFunction ();
+
+console.log("creating new object using class")
+let newcar = new Car("ford","black");
