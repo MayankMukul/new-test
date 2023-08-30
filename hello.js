@@ -389,9 +389,32 @@
 // localStorage.index(0..n);
 
 //session storage
-let key1="key_one" ;
-let valu1 ="value one ";
-sessionStorage.setItem(key1,valu1 );
-window.onstorage= ()=>{         //works for localStorage
-    alert("storage updated");
-};
+// let key1="key_one" ;
+// let valu1 ="value one ";
+// sessionStorage.setItem(key1,valu1 );
+// window.onstorage= ()=>{         //works for localStorage
+//     alert("storage updated");
+// };
+
+//constructor functuion
+
+class Car {
+    constructor( name , color) {//this keyword refers to class object
+        console.log('object created using constructor function ');
+        this.name = name;
+        this.color = color;
+        console.log(`${name} is of ${color} color`);
+        }
+
+    carrunning(){
+        console.log(`car is running`);
+    }
+
+    anotherfunction(){
+        console.log (`another function called from car class `);
+    }
+}
+
+const a = new Car("abc","xyz") ;
+a.carrunning();
+a.anotherfunction();
