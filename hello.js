@@ -460,44 +460,71 @@
 
 // myCar.hello("ford");  // static method connot be called by this
 
-class Complex {
-    constructor(r,i) {
-        console.log('constructor of complex number');
-        console.log(`real part: ${r} imaginary part :${i}`);
-        console.log(`complex number ${r}+i${i}`);
-        this.real=r;
-        this.imaginary = i;
+
+//Practise question 
+
+// class Complex {
+//     constructor(r,i) {
+//         console.log('constructor of complex number');
+//         console.log(`real part: ${r} imaginary part :${i}`);
+//         console.log(`complex number ${r}+i${i}`);
+//         this.real=r;
+//         this.imaginary = i;
+//     }
+
+//     add(num){
+//         this.real=this.real+num.real;
+//         this.imaginary=this.imaginary+num.imaginary
+//     }
+
+//     get getrealimaginary(){
+//         return {
+//             'real' : this.real,
+//             'imaginary' : this.imaginary};
+//     }
+
+//     set setreal(newreal){
+//        return this.real=newreal;
+//     }
+
+//     set setimaginary(newimaginary){
+//         return this.imaginary= newimaginary;
+//     }
+
+// }
+// let c=new Complex(1,2);
+// let d=new Complex(4,3);
+// (c.add (d));//calling instance method on an object
+// console.log(`${c.real} +${c.imaginary}i  `);
+
+// console.log(d.getrealimaginary);
+
+// let e = new Complex(6,6);
+// console.log(e);
+// e.setreal=(7);
+// e.setimaginary=(7);
+// console.log(e);
+
+
+//Returning an object with function
+var expect = function(val) {
+    
+    return {
+        toBe : (n)=> {
+            if(val === n){
+            return true
+        } else {
+            throw new Error('Not Equal')
+            }
+        },
+        notToBe : (n)=>{
+            if(val !== n){
+            return true
+        } else {
+            throw new Error("Equal")
+            }
+        }
     }
-
-    add(num){
-        this.real=this.real+num.real;
-        this.imaginary=this.imaginary+num.imaginary
-    }
-
-    get getrealimaginary(){
-        return {
-            'real' : this.real,
-            'imaginary' : this.imaginary};
-    }
-
-    set setreal(newreal){
-       return this.real=newreal;
-    }
-
-    set setimaginary(newimaginary){
-        return this.imaginary= newimaginary;
-    }
-
-}
-let c=new Complex(1,2);
-let d=new Complex(4,3);
-(c.add (d));//calling instance method on an object
-console.log(`${c.real} +${c.imaginary}i  `);
-
-console.log(d.getrealimaginary);
-
-let e = new Complex(6,6);
-console.log(e);
-e.setreal=(7);
-e.setimaginary=(7);
-console.log(e);
+};
+console.log(expect(5).toBe(5)); // true
+ console.log(expect(5).notToBe(5)); // throws "Equal"
