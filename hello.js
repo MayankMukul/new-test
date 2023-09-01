@@ -541,13 +541,22 @@
 
 //destructuring
 
-let a, b, rest;
-[a, b] = [10, 20];
+// let a, b, rest;
+// [a, b] = [10, 20];
 
-console.log(a);
+// console.log(a);
 
-console.log(b);
+// console.log(b);
 
-[a, b, ...rest] = [10, 20, 30, 40, 50];
+// [a, b, ...rest] = [10, 20, 30, 40, 50];
 
-console.log(rest);
+// console.log(rest);
+
+// Spread syntax
+function sum(x,y,z,a,b,c,) {
+    return x+y+z+a+b+c;
+  }
+  
+  const numbers = [1,2,3,4,5,6];
+  
+  console.log(sum(...numbers));
