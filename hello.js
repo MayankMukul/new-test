@@ -531,10 +531,23 @@
 
 //iife 
 
-(()=>{
-    let a = 1;
-    console.log(`IIFE`,a);
-    console.log("variables declared here are not accessible outside this block")
-})()
+// (()=>{
+//     let a = 1;
+//     console.log(`IIFE`,a);
+//     console.log("variables declared here are not accessible outside this block")
+// })()
 
 // console.log(a);//cannot access a as it is inside iife
+
+//destructuring
+
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+
+console.log(b);
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
