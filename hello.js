@@ -507,24 +507,34 @@
 
 
 //Returning an object with function
-var expect = function(val) {
+// var expect = function(val) {
     
-    return {
-        toBe : (n)=> {
-            if(val === n){
-            return true
-        } else {
-            throw new Error('Not Equal')
-            }
-        },
-        notToBe : (n)=>{
-            if(val !== n){
-            return true
-        } else {
-            throw new Error("Equal")
-            }
-        }
-    }
-};
-console.log(expect(5).toBe(5)); // true
- console.log(expect(5).notToBe(5)); // throws "Equal"
+//     return {
+//         toBe : (n)=> {
+//             if(val === n){
+//             return true
+//         } else {
+//             throw new Error('Not Equal')
+//             }
+//         },
+//         notToBe : (n)=>{
+//             if(val !== n){
+//             return true
+//         } else {
+//             throw new Error("Equal")
+//             }
+//         }
+//     }
+// };
+// console.log(expect(5).toBe(5)); // true
+//  console.log(expect(5).notToBe(5)); // throws "Equal"
+
+//iife 
+
+(()=>{
+    let a = 1;
+    console.log(`IIFE`,a);
+    console.log("variables declared here are not accessible outside this block")
+})()
+
+// console.log(a);//cannot access a as it is inside iife
