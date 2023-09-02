@@ -560,3 +560,10 @@ function sum(x,y,z,a,b,c,) {
   const numbers = [1,2,3,4,5,6];
   
   console.log(sum(...numbers));
+  console.log(...numbers);
+
+
+  // scope 1.Local 2.function 3.Global
+  //hoisting - using the function and the variable before they are initialized
+  //closuers - a function along with its lexical scope
+  //arrow function - ()=>{}  //can also be used as name => console.log(name);
